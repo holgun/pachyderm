@@ -2362,6 +2362,10 @@ func (a *apiServer) GarbageCollect(ctx context.Context, request *pps.GarbageColl
 	return &pps.GarbageCollectResponse{}, nil
 }
 
+func (a *apiServer) ActivateAuth(ctx context.Context, req *pps.PPSActivateAuthRequest) (resp *pps.PPSActivateAuthResponse, err error) {
+	return nil, nil
+}
+
 // incrementGCGeneration increments the GC generation number in etcd
 func (a *apiServer) incrementGCGeneration(ctx context.Context) error {
 	resp, err := a.etcdClient.Get(ctx, client.GCGenerationKey)
